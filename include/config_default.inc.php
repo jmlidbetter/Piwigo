@@ -971,4 +971,21 @@ $conf['proxy_server'] = 'proxy.domain.org:port';
 // If the http-proxy requires authentication, set username and password here
 // e.g. username:password
 $conf['proxy_auth'] = '';
+
+// +-----------------------------------------------------------------------+
+// |                                menu                                   |
+// +-----------------------------------------------------------------------+
+
+// Display "Most Visited" menu item from the specials menus
+$conf['most_visited'] = true;
+
+// Display "recent_pics" menu block
+$conf['recent'] = true;
+
+// Display "random" menu block
+$conf['random'] = true;
+
+// Display "rss" menu block
+$conf['rss'] = true;
+
 ?>

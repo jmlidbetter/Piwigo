@@ -187,7 +187,7 @@ function initialize_menu()
           )
         );
       }
-      $template->assign( 'IS_RELATED', false);
+      $template->assign('IS_RELATED', false);
     }
     //displays only the tags available from the current thumbnails displayed
     else if ( !empty($page['items']) and ($conf['menubar_tag_cloud_content'] == 'current_only' or $conf['menubar_tag_cloud_content'] == 'all_or_current') )
@@ -224,12 +224,15 @@ function initialize_menu()
           );
     }
 
-    $block->data['most_visited'] =
-      array(
-        'URL' => make_index_url(array('section' => 'most_visited')),
-        'TITLE' => l10n('display most visited photos'),
-        'NAME' => l10n('Most visited')
-      );
+    if ($conf['most_visited'])
+    {
+      $block->data['most_visited'] =
+        array(
+          'URL' => make_index_url(array('section' => 'most_visited')),
+          'TITLE' => l10n('display most visited photos'),
+          'NAME' => l10n('Most visited')
+        );
+    }
 
     if ($conf['rate'])
     {
@@ -241,27 +244,33 @@ function initialize_menu()
         );
     }
 
-    $block->data['recent_pics'] =
-      array(
-        'URL' => make_index_url(array('section' => 'recent_pics')),
-        'TITLE' => l10n('display most recent photos'),
-        'NAME' => l10n('Recent photos'),
-      );
+    if ($conf['recent'])
+    {
+      $block->data['recent_pics'] =
+        array(
+          'URL' => make_index_url(array('section' => 'recent_pics')),
+          'TITLE' => l10n('display most recent photos'),
+          'NAME' => l10n('Recent photos'),
+        );
 
-    $block->data['recent_cats'] =
-      array(
-        'URL' => make_index_url(array('section' => 'recent_cats')),
-        'TITLE' => l10n('display recently updated albums'),
-        'NAME' => l10n('Recent albums'),
-      );
+      $block->data['recent_cats'] =
+        array(
+          'URL' => make_index_url(array('section' => 'recent_cats')),
+          'TITLE' => l10n('display recently updated albums'),
+          'NAME' => l10n('Recent albums'),
+        );
+    }
 
-    $block->data['random'] =
-      array(
-        'URL' => get_root_url().'random.php',
-        'TITLE' => l10n('display a set of random photos'),
-        'NAME' => l10n('Random photos'),
-        'REL'=> 'rel="nofollow"'
-      );
+    if ($conf['random'])
+    {
+      $block->data['random'] =
+        array(
+          'URL' => get_root_url().'random.php',
+          'TITLE' => l10n('display a set of random photos'),
+          'NAME' => l10n('Random photos'),
+          'REL'=> 'rel="nofollow"'
+        );
+    }
 
     $block->data['calendar'] =
       array(
@@ -328,13 +337,16 @@ function initialize_menu()
       );
 
     // notification
-    $block->data['rss'] =
-      array(
-        'TITLE'=>l10n('RSS feed'),
-        'NAME'=>l10n('Notification'),
-        'URL'=> get_root_url().'notification.php',
-        'REL'=> 'rel="nofollow"'
-      );
+    if ($conf['rss'])
+    {
+      $block->data['rss'] =
+        array(
+          'TITLE'=>l10n('RSS feed'),
+          'NAME'=>l10n('Notification'),
+          'URL'=> get_root_url().'notification.php',
+          'REL'=> 'rel="nofollow"'
+        );
+    }
     $block->template = 'menubar_menu.tpl';
   }
 
