@@ -42,6 +42,15 @@ if (($conf['show_exif']) and (function_exists('exif_read_data')))
             $key = $lang['exif_field_'.$field];
           }
           $tpl_meta['lines'][$key] = $exif[$field];
+
+          if (strcmp($field, "FocalLength") == 0)
+          {
+            $tpl_meta['lines'][$key] = explode("/", $exif[$field])[0]."mm";
+          }
+          else
+          {
+            $tpl_meta['lines'][$key] = $exif[$field];
+          }
         }
       }
       else

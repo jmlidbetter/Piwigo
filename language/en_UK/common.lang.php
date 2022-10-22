@@ -158,7 +158,7 @@ $lang['Enter your new password below.'] = 'Enter your new password below.';
 $lang['Enter your personnal informations'] = "Enter your personal data";
 $lang['Error sending email'] = "Error when sending email";
 $lang['excluded'] = "excluded";
-$lang['EXIF Metadata'] = 'EXIF Metadata';
+$lang['EXIF Metadata'] = 'Metadata';
 $lang['Expand all albums'] = "Expand all albums";
 $lang['Favorites'] = "Favorites";
 $lang['File name'] = "File name";
@@ -418,4 +418,10 @@ $lang['Related albums'] = 'Related albums';
 $lang['Album name, 1 &rarr; 5 &rarr; 10 &rarr; 100'] = 'Album name, 1 &rarr; 5 &rarr; 10 &rarr; 100';
 $lang['Album name, 100 &rarr; 10 &rarr; 5 &rarr; 1'] = 'Album name, 100 &rarr; 10 &rarr; 5 &rarr; 1';
 $lang['Start-Date'] = 'Start date';
+
+$lang['exif_field_UndefinedTag:0xA434'] = 'Lens';
+$lang['exif_field_ApertureFNumber'] = 'Aperture';
+$lang['exif_field_ISOSpeedRatings'] = 'ISO';
+$lang['exif_field_ExposureTime'] = 'Exposure';
+$lang['exif_field_FocalLength'] = 'Focal Length';
 ?>
